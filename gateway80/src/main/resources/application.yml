@@ -1,0 +1,44 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh1 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          #          uri: http://172.17.0.3:2001        #匹配后提供服务的路由地址
+          uri: lb://seata-order-service
+          predicates:
+            - Path=/order/findAll         # 断言，路径相匹配的进行路由
+        - id: payment_routh2 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+
+          uri: lb://seata-order-service
+          predicates:
+            - Path=/order/create/**         # 断言，路径相匹配的进行路由
+        - id: payment_routh3 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+
+          uri: lb://seata-order-service
+          predicates:
+            - Path=/order/confirm/**         # 断言，路径相匹配的进行路由
+        - id: payment_routh6 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+
+          uri: lb://seata-order-service
+          predicates:
+            - Path=/order/refund/**         # 断言，路径相匹配的进行路由
+        - id: payment_routh4 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+
+          uri: lb://seata-account-service
+          predicates:
+            - Path=/account/findAll         # 断言，路径相匹配的进行路由
+        - id: payment_routh5 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://seata-storage-service
+          predicates:
+            - Path=/storage/findAll         # 断言，路径相匹配的进行路由
+    nacos:
+      discovery:
+        server-addr: 172.17.0.2:8848

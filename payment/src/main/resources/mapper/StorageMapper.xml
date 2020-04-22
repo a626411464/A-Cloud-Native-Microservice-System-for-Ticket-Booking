@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.hao.springcloud.dao.StorageDao">
+
+    <resultMap id="BaseResultMap" type="com.hao.springcloud.domain.Storage">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="ticketType_id" property="ticketTypeId" jdbcType="BIGINT"/>
+        <result column="total" property="total" jdbcType="INTEGER"/>
+        <result column="used" property="used" jdbcType="INTEGER"/>
+        <result column="residue" property="residue" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <update id="decrease">
+        UPDATE
+            t_storage
+        SET
+            used = used + #{count},residue = residue - #{count}
+        WHERE
+            ticketType_id = #{ticketTypeId};
+    </update>
+    <update id="increase">
+        UPDATE
+            t_storage
+        SET
+            used = used - #{count},residue = residue + #{count}
+        WHERE
+            ticketType_id = #{ticketTypeId};
+    </update>
+
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from t_storage;
+    </select>
+
+</mapper>
+
+

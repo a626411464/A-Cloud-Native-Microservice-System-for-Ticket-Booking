@@ -1,0 +1,11 @@
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\service\OrderService.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\controller\OrderController.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\service\StorageService.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\domain\Order.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\config\DataSourceProxyConfig.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\service\impl\OrderServiceImpl.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\dao\OrderDao.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\domain\CommonResult.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\service\AccountService.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\config\MyBatisConfig.java
+E:\project\cloud2020\order\src\main\java\com\hao\springcloud\SeataOrderMainApp2001.java

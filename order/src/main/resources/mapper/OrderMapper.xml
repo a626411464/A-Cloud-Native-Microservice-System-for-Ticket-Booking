@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.hao.springcloud.dao.OrderDao">
+
+    <resultMap id="BaseResultMap" type="com.hao.springcloud.domain.Order">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_id" property="userId" jdbcType="BIGINT"/>
+        <result column="ticketType_id" property="ticketTypeId" jdbcType="BIGINT"/>
+        <result column="count" property="count" jdbcType="INTEGER"/>
+        <result column="money" property="money" jdbcType="DECIMAL"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <insert id="create" parameterType="com.hao.springcloud.domain.Order" useGeneratedKeys="true" keyProperty="id">
+        insert into t_order (id,user_id,ticketType_id,count,money,status)
+        values (null,#{userId},#{ticketTypeId},#{count},#{money},0);
+    </insert>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select * from t_order;
+    </select>
+
+    <update id="update">
+        update t_order set status = 1
+        where user_id=#{userId} and status = #{status};
+    </update>
+    <update id="cannel">
+        update t_order set status = 2
+        where id=#{id} ;
+    </update>
+
+    <update id="refund">
+        update t_order set status = 3
+        where id=#{id} ;
+    </update>
+    <select id="orderfindByid"  resultMap="BaseResultMap">
+        select * from t_order where id=#{id};
+    </select>
+
+
+
+</mapper>
