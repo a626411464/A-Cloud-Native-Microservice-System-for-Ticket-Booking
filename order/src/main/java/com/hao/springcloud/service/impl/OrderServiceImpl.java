@@ -35,6 +35,10 @@ public class OrderServiceImpl implements OrderService
     {
         log.info("----->开始新建订单");
         //1 新建订单
+        //2 获取订单的价格
+        //获取车票的价格;
+        System.out.println(order.getTicketTypeId());
+        order.setMoney(storageService.getPrice(order.getTicketTypeId()));
         orderDao.create(order);
        return orderDao.orderfindByid(order.getId());
     }

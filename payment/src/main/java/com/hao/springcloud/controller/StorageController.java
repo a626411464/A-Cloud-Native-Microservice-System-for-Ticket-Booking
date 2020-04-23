@@ -25,6 +25,16 @@ public class StorageController {
         storageService.increase(ticketTypeId, count);
         return new CommonResult(200,"恢复库存成功！");
     }
+
+    @RequestMapping("/storage/getprice")
+    public Integer getprice(Long ticketTypeId) {
+        System.out.println(ticketTypeId);
+        return storageService.getPrice(ticketTypeId);
+    }
+
+
+
+
     @RequestMapping("/storage/findAll")
     public CommonResult findAll() {
         return new CommonResult(200,"库存查询成功！",storageService.findAll());

@@ -28,4 +28,8 @@ public class Storage implements Serializable {
      * 剩余库存
      */
     private Integer residue;
+    /**
+    *  车票价格
+     */
+    private Integer price;
 }

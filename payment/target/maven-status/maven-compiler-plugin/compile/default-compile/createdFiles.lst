@@ -1,0 +1,9 @@
+com\hao\springcloud\dao\StorageDao.class
+com\hao\springcloud\config\DataSourceProxyConfig.class
+com\hao\springcloud\service\StorageService.class
+com\hao\springcloud\domain\Storage.class
+com\hao\springcloud\domain\CommonResult.class
+com\hao\springcloud\config\MyBatisConfig.class
+com\hao\springcloud\controller\StorageController.class
+com\hao\springcloud\SeataStorageServiceApplication2002.class
+com\hao\springcloud\service\impl\StorageServiceImpl.class

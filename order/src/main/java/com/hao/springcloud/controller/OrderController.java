@@ -14,10 +14,10 @@ public class OrderController
     @GetMapping("/order/create")
     public CommonResult create(Order order)
     {
+
         Order new_order=orderService.create(order);
         return new CommonResult(200,"订单创建成功 ",new_order);
     }
-
     @GetMapping("/order/confirm")
     public CommonResult confirm(long orderId,int pay){
         int status=orderService.confirm(orderId);
@@ -38,13 +38,6 @@ public class OrderController
             return new CommonResult(404,"订单不存在");
         }
     }
-    @GetMapping("/order/confirmtest")
-    public CommonResult confirmtest(long orderId,int pay){
-        Order order=orderService.orderfindByid(orderId);
-        String s=orderService.breakOrder(order);
-        order=orderService.orderfindByid(orderId);
-        return new CommonResult(200,s,order);
-        }
 
     @GetMapping("/order/refund")
     public CommonResult refund(long orderId) {

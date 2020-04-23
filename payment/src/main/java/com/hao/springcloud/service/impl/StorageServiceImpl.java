@@ -31,6 +31,12 @@ public class StorageServiceImpl implements StorageService {
     }
 
     @Override
+    public int getPrice(Long ticketTypeId) {
+        System.out.println(ticketTypeId);
+        return storageDao.getPrice(ticketTypeId);
+    }
+
+    @Override
     public void increase(Long ticketTypeId, Integer count) {
         LOGGER.info("------->storage-service中恢复库存开始");
         storageDao.increase(ticketTypeId,count);

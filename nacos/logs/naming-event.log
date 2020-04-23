@@ -1,0 +1,20 @@
+2020-04-22 16:32:00,652 INFO DEFAULT_GROUP@@cloud-gateway {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.2.121:8999:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2020-04-22 16:32:00,659 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@cloud-gateway, ips: 192.168.2.121:8999_true,
+
+2020-04-22 16:32:03,523 INFO DEFAULT_GROUP@@gateway {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.2.121:9000:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2020-04-22 16:32:03,523 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@gateway, ips: 192.168.2.121:9000_true,
+
+2020-04-22 16:34:00,577 INFO {POS} {IP-DISABLED} valid: 192.168.2.121:8999@DEFAULT@DEFAULT_GROUP@@cloud-gateway, region: unknown, msg: client timeout after 15000, last beat: 1587544420942
+
+2020-04-22 16:34:01,990 INFO service: DEFAULT_GROUP@@cloud-gateway {POS} {IP-ENABLED} valid: 192.168.2.121:8999@DEFAULT, region: unknown, msg: client beat ok
+
+2020-04-22 16:34:01,995 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@cloud-gateway, ips: 192.168.2.121:8999_true,
+
+2020-04-22 16:35:15,592 INFO {POS} {IP-DISABLED} valid: 192.168.2.121:8999@DEFAULT@DEFAULT_GROUP@@cloud-gateway, region: unknown, msg: client timeout after 15000, last beat: 1587544497125
+
+2020-04-22 16:35:18,340 INFO service: DEFAULT_GROUP@@cloud-gateway {POS} {IP-ENABLED} valid: 192.168.2.121:8999@DEFAULT, region: unknown, msg: client beat ok
+
+2020-04-22 16:35:18,344 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@cloud-gateway, ips: 192.168.2.121:8999_true,
+

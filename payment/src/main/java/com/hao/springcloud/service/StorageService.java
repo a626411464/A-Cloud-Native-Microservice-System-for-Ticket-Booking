@@ -12,6 +12,9 @@ public interface StorageService {
 
     List<Storage> findAll();
 
+    int getPrice(Long ticketTypeId);
+
+
     void increase(Long ticketTypeId, Integer count);
 }
 

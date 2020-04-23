@@ -14,5 +14,8 @@ public interface StorageDao {
 
     List<Storage> findAll();
 
+    int getPrice(@Param("ticketTypeId") Long ticketTypeId);
+
+
     void increase(@Param("ticketTypeId") Long ticketTypeId, @Param("count") Integer count);
 }

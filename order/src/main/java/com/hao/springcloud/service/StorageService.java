@@ -5,6 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
+
 @FeignClient(value="seata-storage-service")
 public interface StorageService
 {
@@ -15,4 +17,8 @@ public interface StorageService
 
     @PostMapping(value="/storage/decrease")
     CommonResult decreaseTest(@RequestParam("ticketTypeId") Long ticketTypeId, @RequestParam("count") Integer count);
+
+    @PostMapping(value="/storage/getprice")
+    BigDecimal getPrice(@RequestParam("ticketTypeId") Long ticketTypeId);
+
 }
